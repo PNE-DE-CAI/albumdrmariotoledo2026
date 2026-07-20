@@ -1,1 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Álbum dos Professores — E.E. Mário Toledo de Moraes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#0b1a30 0%,#06101e 50%,#0b1a30 100%);min-height:100vh;padding:12px;color:#e2e8f0}
+.mc{max-width:1240px;margin:0 auto;background:#0c1525;border-radius:36px;padding:18px;box-shadow:0 30px 60px rgba(0,0,0,.7),inset 0 1px 4px rgba(100,200,255,.05);border:1px solid rgba(34,139,230,.2);position:relative;overflow:hidden}
+.mc::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;border-radius:36px}
+.hdr{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,rgba(34,139,230,.12),rgba(56,189,248,.06));backdrop-filter:blur(8px);padding:14px 24px;border-radius:60px;margin-bottom:16px;flex-wrap:wrap;gap:12px;position:relative;z-index:2;border:1px solid rgba(34,139,230,.12)}
+.logo-a{display:flex;align-items:center;gap:14px}
+.logo-circle{width:52px;height:52px;border-radius:14px;overflow:hidden;border:2px solid rgba(34,139,230,.3);box-shadow:0 4px 12px rgba(0,0,0,.3);background:#fff;display:flex;align-items:center;justify-content:center}
+.logo-circle img{width:100%;height:100%;object-fit:cover}
+.logo-t{line-height:1.2}
+.logo-t .main{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.04em;color:#fff}
+.logo-t small{display:block;font-size:.58rem;font-weight:400;color:#6b9fd4;letter-spacing:.04em}
+.tb{background:linear-gradient(135deg,#228be6,#1a73c9);color:#fff;padding:8px 18px;border-radius:3rem;font-weight:700;letter-spacing:.8px;font-size:.75rem;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.tb .d{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:bl 1.5s ease infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.3}}
+.pn{position:sticky;top:0;z-index:100;display:flex;gap:4px;padding:8px 4px;overflow-x:auto;background:rgba(12,21,37,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(34,139,230,.08);margin-bottom:16px;scrollbar-width:none;border-radius:16px}
+.pn::-webkit-scrollbar{display:none}
+.pl{flex-shrink:0;display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:16px;border:1px solid rgba(34,139,230,.1);background:transparent;color:#7a9cc0;font-size:.72rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .25s;white-space:nowrap}
+.pl:hover{background:rgba(34,139,230,.08);color:#93c5fd}
+.pl .c{font-family:'JetBrains Mono',monospace;font-size:.55rem;padding:1px 5px;border-radius:5px;background:rgba(34,139,230,.1)}
+.pl[data-s="done"]{border-color:#4ade80;color:#4ade80}
+.cb{background:linear-gradient(135deg,rgba(34,139,230,.07),rgba(56,189,248,.04));border:1px solid rgba(34,139,230,.1);border-radius:18px;padding:20px 18px;margin-bottom:16px;position:relative;z-index:2;animation:fu .5s ease .15s forwards;opacity:0}
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.cl{font-family:'JetBrains Mono',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#60a5fa;margin-bottom:12px;display:flex;align-items:center;gap:5px}
+.cl::before{content:'>';color:#38bdf8;font-weight:700}
+.cr{display:flex;gap:8px}
+.ci{flex:1;background:rgba(0,0,0,.3);border:2px solid rgba(34,139,230,.12);border-radius:10px;padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:1rem;color:#fff;letter-spacing:.1em;text-transform:uppercase;outline:none;transition:border-color .3s,box-shadow .3s}
+.ci::placeholder{color:#4a6a8a;font-size:.75rem;letter-spacing:.05em;text-transform:none}
+.ci:focus{border-color:#228be6;box-shadow:0 0 14px rgba(34,139,230,.2)}
+.ci.sh{border-color:#ef4444;animation:sh .4s ease}
+.ci.gl{border-color:#4ade80;box-shadow:0 0 18px rgba(74,222,128,.2)}
+@keyframes sh{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.btn{background:linear-gradient(135deg,#228be6,#1a73c9);border:none;border-radius:10px;padding:12px 24px;font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.06em;color:#fff;cursor:pointer;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.btn:hover{transform:scale(1.03);box-shadow:0 4px 14px rgba(34,139,230,.4)}
+.btn:active{transform:scale(.97)}
+.cm{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:.68rem;min-height:16px}
+.cm.e{color:#f87171}.cm.o{color:#4ade80}
+.op{display:flex;align-items:center;gap:12px;margin-bottom:18px;animation:fu .5s ease .3s forwards;opacity:0;position:relative;z-index:2}
+.pl2{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:#7a9cc0;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+.pl2 b{color:#38bdf8;font-size:.85rem}
+.pt{flex:1;height:8px;background:rgba(0,0,0,.3);border-radius:8px;overflow:hidden;border:1px solid rgba(34,139,230,.06)}
+.pf{height:100%;width:0;background:linear-gradient(90deg,#228be6,#38bdf8,#4ade80);border-radius:8px;transition:width .6s cubic-bezier(.23,1,.32,1)}
+.pp{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#38bdf8;min-width:46px;text-align:right}
+.gs{margin-bottom:24px;border-radius:20px;overflow:hidden;position:relative;z-index:2;scroll-margin-top:60px;animation:fu .4s ease .35s forwards;opacity:0}
+.gh{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px;background:linear-gradient(135deg,rgba(34,139,230,.1),rgba(56,189,248,.05));border-bottom:1px solid rgba(34,139,230,.06);flex-wrap:wrap}
+.gl2{display:flex;align-items:center;gap:8px}
+.gi{font-size:1.4rem}
+.gt h2{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.05em;color:#fff;line-height:1.1}
+.gt .gs2{font-size:.68rem;color:#7a9cc0;font-weight:300}
+.gr{display:flex;align-items:center;gap:7px}
+.gp{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:#38bdf8}
+.gb{width:60px;height:4px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden}
+.gf{height:100%;border-radius:4px;transition:width .5s}
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;padding:14px;background:rgba(0,0,0,.12)}
+.ss{position:relative;aspect-ratio:3/4;background:rgba(0,0,0,.25);border:2px dashed rgba(34,139,230,.1);border-radius:14px;overflow:hidden;transition:border-color .3s,box-shadow .3s,transform .3s;cursor:pointer}
+.ss:hover:not(.r){border-color:rgba(56,189,248,.3);transform:translateY(-3px);box-shadow:0 8px 20px rgba(34,139,230,.12)}
+.ss.r{border-style:solid;border-color:var(--sc,#228be6);box-shadow:0 4px 20px rgba(34,139,230,.18)}
+.ss.r:hover{transform:none}
+.sp{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;transition:opacity .4s;background:repeating-linear-gradient(45deg,transparent,transparent 9px,rgba(34,139,230,.012) 9px,rgba(34,139,230,.012) 10px)}
+.ss.r .sp{opacity:0;pointer-events:none}
+.sn{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(56,189,248,.07);line-height:1}
+.sq{width:30px;height:30px;border-radius:50%;border:2px solid rgba(34,139,230,.1);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:rgba(56,189,248,.12)}
+.sh2{font-family:'JetBrains Mono',monospace;font-size:.42rem;color:rgba(56,189,248,.14);text-transform:uppercase;letter-spacing:.06em}
+.sf{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;transform:scale(.85) rotateY(90deg);transition:opacity .5s,transform .55s cubic-bezier(.23,1,.32,1);pointer-events:none}
+.ss.r .sf{opacity:1;transform:scale(1) rotateY(0);pointer-events:auto}
+.sfb{position:absolute;inset:0;background:linear-gradient(145deg,var(--c1,#1a3a5c),var(--c2,#0c1525))}
+.sfb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,transparent 40%,rgba(0,0,0,.7) 100%)}
+.sphoto{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;overflow:hidden}
+.sphoto img{width:100%;height:100%;object-fit:cover;filter:brightness(.88) saturate(1.1)}
+.sphoto-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(145deg,rgba(34,139,230,.12),rgba(56,189,248,.06))}
+.sinfo{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:14px 10px 10px;background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.45) 65%,transparent 100%)}
+.sname{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.04em;color:#fff;line-height:1.1;text-shadow:0 2px 8px rgba(0,0,0,.5);margin-bottom:3px}
+.srole{font-family:'JetBrains Mono',monospace;font-size:.42rem;text-transform:uppercase;letter-spacing:.07em;color:#38bdf8;background:rgba(34,139,230,.18);padding:2px 6px;border-radius:5px;display:inline-block;border:1px solid rgba(34,139,230,.12)}
+.snum{position:absolute;top:7px;right:7px;z-index:3;font-family:'Bebas Neue',sans-serif;font-size:.85rem;color:rgba(255,255,255,.55);background:rgba(0,0,0,.45);padding:2px 7px;border-radius:8px;border:1px solid rgba(255,255,255,.06)}
+.sac{position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sc,#228be6),#38bdf8);z-index:4}
+.rf{position:absolute;inset:0;background:radial-gradient(circle,rgba(34,139,230,.3),transparent 60%);opacity:0;pointer-events:none;z-index:10}
+.ss.pp2 .rf{animation:bu .6s ease forwards}
+@keyframes bu{0%{opacity:0;transform:scale(.4)}30%{opacity:1;transform:scale(1.2)}100%{opacity:0;transform:scale(2)}}
+@keyframes skp{0%{opacity:0;transform:scale(.3) rotateY(180deg)}60%{opacity:1;transform:scale(1.04) rotateY(-4deg)}100%{opacity:1;transform:scale(1) rotateY(0)}}
+.ss.pp2 .sf{animation:skp .6s cubic-bezier(.23,1,.32,1) forwards}
+.gdone{display:none;padding:12px 18px;text-align:center;border-top:1px solid rgba(34,139,230,.04);background:rgba(74,222,128,.03)}
+.gdone.show{display:block}
+.gdone p{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:#4ade80;letter-spacing:.05em}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);z-index:10000;align-items:center;justify-content:center;padding:16px}
+.modal-overlay.open{display:flex}
+.modal{background:#0c1525;border:1px solid rgba(34,139,230,.18);border-radius:24px;max-width:400px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:mi .4s ease}
+@keyframes mi{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.mx{position:absolute;top:12px;right:14px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:#7a9cc0;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2}
+.mx:hover{background:rgba(239,68,68,.2);border-color:#ef4444;color:#f87171}
+.mh{padding:28px 24px 18px;text-align:center;position:relative}
+.mphoto{width:130px;height:130px;border-radius:50%;margin:0 auto 14px;overflow:hidden;border:3px solid rgba(34,139,230,.3);box-shadow:0 8px 24px rgba(34,139,230,.2)}
+.mphoto img{width:100%;height:100%;object-fit:cover}
+.mphoto-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(145deg,rgba(34,139,230,.15),rgba(56,189,248,.08))}
+.mn{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.05em;color:#fff;line-height:1.2}
+.mr{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:#60a5fa;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.mk{font-family:'JetBrains Mono',monospace;font-size:.56rem;color:#4a6a8a;margin-top:8px;letter-spacing:.04em}
+.mb{padding:0 24px 24px}
+.mf2{padding:14px 24px;border-top:1px solid rgba(34,139,230,.06);display:flex;align-items:center;gap:10px;justify-content:center}
+.mf2 img{width:26px;height:26px;border-radius:6px;object-fit:cover;background:#fff;padding:1px}
+.mf2 span{font-size:.58rem;color:#3a5a7a;letter-spacing:.04em}
+.cbox{position:fixed;inset:0;pointer-events:none;z-index:100000;overflow:hidden}
+.cp{position:absolute;top:-20px;opacity:0;animation:cf 2s ease forwards}
+@keyframes cf{0%{opacity:1;transform:translateY(0) rotate(0) scale(1)}100%{opacity:0;transform:translateY(100vh) rotate(720deg) scale(.4)}}
+.cb2{display:none;background:linear-gradient(135deg,rgba(34,139,230,.12),rgba(74,222,128,.08));border:2px solid #38bdf8;border-radius:18px;padding:28px;text-align:center;margin-top:24px;position:relative;z-index:2;animation:bi .7s ease}
+@keyframes bi{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+.cb2.show{display:block}
+.cb2 h2{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#38bdf8;letter-spacing:.06em;margin-bottom:4px}
+.cb2 p{color:#7a9cc0;font-size:.9rem}
+.admin-zone{margin-top:28px;position:relative;z-index:2;animation:fu .4s ease .5s forwards;opacity:0}
+.admin-gate{text-align:center;padding:24px 20px;background:rgba(34,139,230,.06);border:1px dashed rgba(34,139,230,.1);border-radius:14px;cursor:pointer;transition:all .3s;user-select:none}
+.admin-gate:hover{background:rgba(34,139,230,.12);border-color:rgba(56,189,248,.2)}
+.admin-gate-icon{font-size:1.6rem;margin-bottom:8px;opacity:.5}
+.admin-gate-text{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#60a5fa;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.admin-gate-sub{font-family:'JetBrains Mono',monospace;font-size:.52rem;color:#3a5a7a;letter-spacing:.06em;margin-top:4px}
+.admin-pw-box{display:none;margin-top:16px;background:rgba(0,0,0,.2);border:1px solid rgba(34,139,230,.06);border-radius:12px;padding:16px;text-align:center}
+.admin-pw-box.open{display:block;animation:fu .3s ease forwards}
+.admin-pw-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:#7a9cc0;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.admin-pw-row{display:flex;justify-content:center;gap:8px;align-items:center}
+.admin-pw{background:rgba(0,0,0,.4);border:1px solid rgba(34,139,230,.12);border-radius:8px;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#fff;outline:none;width:200px;text-align:center;letter-spacing:.15em;transition:border-color .3s}
+.admin-pw:focus{border-color:#228be6;box-shadow:0 0 10px rgba(34,139,230,.15)}
+.admin-pw-btn{background:linear-gradient(135deg,#38bdf8,#228be6);border:none;border-radius:8px;padding:10px 18px;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.05em;color:#fff;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.admin-pw-btn:hover{transform:scale(1.03);box-shadow:0 4px 12px rgba(56,189,248,.3)}
+.admin-pw-msg{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:#f87171;margin-top:8px;min-height:16px}
+.codes-area{display:none;margin-top:16px}
+.codes-area.open{display:block;animation:fu .4s ease forwards}
+.codes-sec{margin-bottom:8px;background:rgba(34,139,230,.05);border:1px solid rgba(34,139,230,.04);border-radius:12px;overflow:hidden}
+.codes-sec summary{padding:12px 16px;font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.04em;color:#38bdf8;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;transition:background .2s}
+.codes-sec summary::-webkit-details-marker{display:none}
+.codes-sec summary::before{content:'\25B8';transition:transform .2s;font-size:.8rem}
+.codes-sec[open] summary::before{transform:rotate(90deg)}
+.codes-sec summary:hover{background:rgba(56,189,248,.04)}
+.ct{width:100%;border-collapse:collapse}
+.ct th{font-family:'JetBrains Mono',monospace;font-size:.5rem;text-transform:uppercase;letter-spacing:.08em;color:#60a5fa;text-align:left;padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.05)}
+.ct td{font-family:'JetBrains Mono',monospace;font-size:.58rem;padding:5px 10px;border-bottom:1px solid rgba(255,255,255,.02);color:#7a9cc0}
+.ct tr:last-child td{border-bottom:none}
+.ct .cv{color:#38bdf8;font-weight:700;letter-spacing:.04em}
+.ct .si{display:inline-flex;width:14px;height:14px;border-radius:50%;align-items:center;justify-content:center;font-size:.5rem}
+.si.lk{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.si.ul{background:rgba(74,222,128,.12);color:#4ade80;border:1px solid rgba(74,222,128,.2)}
+footer{text-align:center;margin-top:20px;padding:.8rem;color:#2a4a6a;font-size:.62rem;border-top:1px solid rgba(34,139,230,.04);position:relative;z-index:2}
+@media(max-width:640px){
+.mc{padding:10px;border-radius:20px}
+.hdr{border-radius:28px;padding:10px 14px;flex-direction:column;align-items:flex-start}
+.sg{grid-template-columns:repeat(2,1fr);gap:8px;padding:10px}
+.cr{flex-direction:column}
+.sname{font-size:.85rem}
+.gh{padding:10px 12px}
+.modal{max-height:85vh;border-radius:18px}
+.mh{padding:20px 16px 14px}
+.mphoto{width:100px;height:100px}
+.admin-pw{width:160px}
+}
+@media(max-width:380px){.sg{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="mc">
+  <div class="hdr">
+    <div class="logo-a">
+      <div class="logo-circle">
+        <img src="https://iili.io/CwO0S8G.jpg" alt="Logo E.E. Mário Toledo de Moraes">
+      </div>
+      <div class="logo-t">
+        <span class="main">Álbum dos Professores</span>
+        <small>E.E. Mário Toledo de Moraes — Dr.</small>
+      </div>
+    </div>
+    <div class="tb"><span class="d"></span><span id="totalCount">65</span> Professores</div>
+  </div>
+  <nav class="pn" id="pNav"></nav>
+  <div class="cb">
+    <div class="cl">Cole o código do professor para revelar a figurinha</div>
+    <div class="cr">
+      <input type="text" class="ci" id="ci" placeholder="Cole o código aqui..." maxlength="10" autocomplete="off" spellcheck="false">
+      <button class="btn" id="btnReveal">REVELAR</button>
+    </div>
+    <div class="cm" id="cm"></div>
+  </div>
+  <div class="op">
+    <span class="pl2">Revelados: <b id="oc">0</b> / <b id="ot">65</b></span>
+    <div class="pt"><div class="pf" id="of"></div></div>
+    <span class="pp" id="op">0%</span>
+  </div>
+  <div id="gc"></div>
+  <div class="cb2" id="banner"><h2>&#9733; Álbum Completo! &#9733;</h2><p>Todas as 65 figurinhas foram reveladas!</p></div>
+  <div class="admin-zone">
+    <div class="admin-gate" id="adminGate">
+      <div class="admin-gate-icon">&#128274;</div>
+      <div class="admin-gate-text">Painel do Formador</div>
+      <div class="admin-gate-sub">Toque para ver todos os códigos</div>
+    </div>
+    <div class="admin-pw-box" id="adminPwBox">
+      <div class="admin-pw-label">Senha do formador</div>
+      <div class="admin-pw-row">
+        <input type="password" class="admin-pw" id="adminPw" placeholder="Senha" maxlength="20">
+        <button class="admin-pw-btn" id="adminPwBtn">ACESSAR</button>
+      </div>
+      <div class="admin-pw-msg" id="adminPwMsg"></div>
+    </div>
+    <div class="codes-area" id="codesArea"></div>
+  </div>
+  <footer>Álbum dos Professores &bull; E.E. Mário Toledo de Moraes — Dr. &bull; 2026</footer>
+</div>
+<div class="modal-overlay" id="modal"><div class="modal" id="modalInner"></div></div>
+<div class="cbox" id="cbox"></div>
 
+<script>
+const LOGO='https://iili.io/CwO0S8G.jpg';
+const _ADMIN_PW='MARIO2026';
+
+const GROUPS=[
+{id:'A',nm:'Dedicados',sub:'Comprometidos com a educação',ic:'💎',col:'#228be6',items:[
+{id:1,cd:'K7M3P',nm:'Prof(a). 01',img:'https://iili.io/CwOXnNs.jpg',c1:'#1a3a5c'},
+{id:2,cd:'X9R2L',nm:'Prof(a). 02',img:'https://iili.io/CwOWyNa.jpg',c1:'#1e3d5f'},
+{id:3,cd:'A4N8W',nm:'Prof(a). 03',img:'https://iili.io/CwOXoDG.jpg',c1:'#1b3557'},
+{id:4,cd:'Z6T1Q',nm:'Prof(a). 04',img:'https://iili.io/CwOXzxf.jpg',c1:'#172e4a'},
+{id:5,cd:'B3F7D',nm:'Prof(a). 05',img:'https://iili.io/CwOXIV4.jpg',c1:'#142944'},
+{id:6,cd:'H5J9C',nm:'Prof(a). 06',img:'https://iili.io/CwOXAf2.jpg',c1:'#1a3a5c'},
+{id:7,cd:'V2Y4K',nm:'Prof(a). 07',img:'https://iili.io/CwOXRlS.jpg',c1:'#1e3d5f'},
+{id:8,cd:'M8G6S',nm:'Prof(a). 08',img:'https://iili.io/CwOX5U7.jpg',c1:'#1b3557'},
+{id:9,cd:'L1X3R',nm:'Prof(a). 09',img:'https://iili.io/CwOXYJ9.jpg',c1:'#172e4a'},
+{id:10,cd:'P7W9N',nm:'Prof(a). 10',img:'https://iili.io/CwOXaRe.jpg',c1:'#142944'}
+]},
+{id:'B',nm:'Inspiradores',sub:'Que motivam e transformam',ic:'✨',col:'#f59e0b',items:[
+{id:11,cd:'D4H2A',nm:'Prof(a). 11',img:'https://iili.io/CwOXcOu.jpg',c1:'#5b3a0a'},
+{id:12,cd:'T6K8F',nm:'Prof(a). 12',img:'https://iili.io/CwOX1xj.jpg',c1:'#6b4510'},
+{id:13,cd:'R9M1J',nm:'Prof(a). 13',img:'https://iili.io/CwOXGiQ.jpg',c1:'#5c3d10'},
+{id:14,cd:'Q3Z5L',nm:'Prof(a). 14',img:'https://iili.io/CwOXVfV.jpg',c1:'#4d3310'},
+{id:15,cd:'N7B4V',nm:'Prof(a). 15',img:'https://iili.io/CwOXjJ1.jpg',c1:'#432c0e'},
+{id:16,cd:'W2C6X',nm:'Prof(a). 16',img:'https://iili.io/CwOXNOg.jpg',c1:'#5b3a0a'},
+{id:17,cd:'Y8D3H',nm:'Prof(a). 17',img:'https://iili.io/CwOXOba.jpg',c1:'#6b4510'},
+{id:18,cd:'F5G9P',nm:'Prof(a). 18',img:'https://iili.io/CwOXvWv.jpg',c1:'#5c3d10'},
+{id:19,cd:'J1K7T',nm:'Prof(a). 19',img:'https://iili.io/CwOXUfp.jpg',c1:'#4d3310'},
+{id:20,cd:'S4L8R',nm:'Prof(a). 20',img:'https://iili.io/CwOXrgI.jpg',c1:'#432c0e'}
+]},
+{id:'C',nm:'Criativos',sub:'Inovação em cada aula',ic:'🎨',col:'#8b5cf6',items:[
+{id:21,cd:'C9N2W',nm:'Prof(a). 21',img:'https://iili.io/CwOXien.jpg',c1:'#3b1f7a'},
+{id:22,cd:'E6Q4M',nm:'Prof(a). 22',img:'https://iili.io/CwOXZXf.jpg',c1:'#4c2889'},
+{id:23,cd:'U3V8A',nm:'Prof(a). 23',img:'https://iili.io/CwOXm12.jpg',c1:'#3d2277'},
+{id:24,cd:'G7X1Z',nm:'Prof(a). 24',img:'https://iili.io/CwOXts4.jpg',c1:'#341d6b'},
+{id:25,cd:'K2Y5B',nm:'Prof(a). 25',img:'https://iili.io/CwOh9d7.jpg',c1:'#2d1960'},
+{id:26,cd:'L8A3D',nm:'Prof(a). 26',img:'https://iili.io/CwOhJee.jpg',c1:'#3b1f7a'},
+{id:27,cd:'M4F6J',nm:'Prof(a). 27',img:'https://iili.io/CwOh3zb.jpg',c1:'#4c2889'},
+{id:28,cd:'P1H9N',nm:'Prof(a). 28',img:'https://iili.io/CwOhB1V.jpg',c1:'#3d2277'},
+{id:29,cd:'R5J7S',nm:'Prof(a). 29',img:'https://iili.io/CwOhqqQ.jpg',c1:'#341d6b'},
+{id:30,cd:'T9L2W',nm:'Prof(a). 30',img:'https://iili.io/CwOhImg.jpg',c1:'#2d1960'}
+]},
+{id:'D',nm:'Resilientes',sub:'Persistência e força',ic:'🔥',col:'#ef4444',items:[
+{id:31,cd:'A3M8C',nm:'Prof(a). 31',img:'https://iili.io/CwOhAhJ.jpg',c1:'#7a1a1a'},
+{id:32,cd:'B6N4F',nm:'Prof(a). 32',img:'https://iili.io/CwOh07t.jpg',c1:'#8b2020'},
+{id:33,cd:'D2P7K',nm:'Prof(a). 33',img:'https://iili.io/CwOhEpn.jpg',c1:'#731818'},
+{id:34,cd:'F8Q1R',nm:'Prof(a). 34',img:'https://iili.io/CwOhWQf.jpg',c1:'#661515'},
+{id:35,cd:'G4S5V',nm:'Prof(a). 35',img:'https://iili.io/CwOhjEl.jpg',c1:'#5c1212'},
+{id:36,cd:'H1T9X',nm:'Prof(a). 36',img:'https://iili.io/CwOheY7.jpg',c1:'#7a1a1a'},
+{id:37,cd:'J7U3Z',nm:'Prof(a). 37',img:'https://iili.io/CwOhSTu.jpg',c1:'#8b2020'},
+{id:38,cd:'K5V8A',nm:'Prof(a). 38',img:'https://iili.io/CwOhUhb.jpg',c1:'#731818'},
+{id:39,cd:'L9W2B',nm:'Prof(a). 39',img:'https://iili.io/CwOhLYP.jpg',c1:'#661515'},
+{id:40,cd:'M3X6D',nm:'Prof(a). 40',img:'https://iili.io/CwOhQv1.jpg',c1:'#5c1212'}
+]},
+{id:'E',nm:'Humanistas',sub:'Empatia e acolhimento',ic:'💚',col:'#10b981',items:[
+{id:41,cd:'N7Y4F',nm:'Prof(a). 41',img:'https://iili.io/CwOhZyF.jpg',c1:'#0a4a32'},
+{id:42,cd:'P2Z8G',nm:'Prof(a). 42',img:'https://iili.io/CwOhbja.jpg',c1:'#0d5a3d'},
+{id:43,cd:'Q6A1H',nm:'Prof(a). 43',img:'https://iili.io/CwOhmZJ.jpg',c1:'#0b5036'},
+{id:44,cd:'R4B7J',nm:'Prof(a). 44',img:'https://iili.io/CwOj9GR.jpg',c1:'#09462f'},
+{id:45,cd:'S9C3K',nm:'Prof(a). 45',img:'https://iili.io/CwOhyCv.jpg',c1:'#083d29'},
+{id:46,cd:'T1D5L',nm:'Prof(a). 46',img:'https://iili.io/CwOjH4p.jpg',c1:'#0a4a32'},
+{id:47,cd:'U8E9M',nm:'Prof(a). 47',img:'https://iili.io/CwOjFyX.jpg',c1:'#0d5a3d'},
+{id:48,cd:'V3F2N',nm:'Prof(a). 48',img:'https://iili.io/CwOju87.jpg',c1:'#0b5036'},
+{id:49,cd:'W7G6P',nm:'Prof(a). 49',img:'https://iili.io/CwOjR99.jpg',c1:'#09462f'},
+{id:50,cd:'X4H8Q',nm:'Prof(a). 50',img:'https://iili.io/CwOj7wu.jpg',c1:'#083d29'}
+]},
+{id:'F',nm:'Visionários',sub:'Olhar para o futuro',ic:'🌟',col:'#ec4899',items:[
+{id:51,cd:'Y1J3R',nm:'Prof(a). 51',img:'https://iili.io/CwOj5ue.jpg',c1:'#7a1a45'},
+{id:52,cd:'Z9K7S',nm:'Prof(a). 52',img:'https://iili.io/CwOjcnj.jpg',c1:'#8b1f50'},
+{id:53,cd:'A5L2T',nm:'Prof(a). 53',img:'https://iili.io/CwOjlMx.jpg',c1:'#731840'},
+{id:54,cd:'B8M4U',nm:'Prof(a). 54',img:'https://iili.io/CwOj06Q.jpg',c1:'#661539'},
+{id:55,cd:'C2N9V',nm:'Prof(a). 55',img:'https://iili.io/CwOjEFV.jpg',c1:'#5c1233'},
+{id:56,cd:'D6P1W',nm:'Prof(a). 56',img:'https://iili.io/CwOjM8P.jpg',c1:'#7a1a45'},
+{id:57,cd:'F3Q5X',nm:'Prof(a). 57',img:'https://iili.io/CwOjXAF.jpg',c1:'#8b1f50'},
+{id:58,cd:'G9R8Y',nm:'Prof(a). 58',img:'https://iili.io/CwOjGcB.jpg',c1:'#731840'},
+{id:59,cd:'H7S3Z',nm:'Prof(a). 59',img:'https://iili.io/CwOjjta.jpg',c1:'#661539'},
+{id:60,cd:'J4T6A',nm:'Prof(a). 60',img:'https://iili.io/CwOjNoJ.jpg',c1:'#5c1233'}
+]},
+{id:'G',nm:'Referências',sub:'Exemplo e liderança',ic:'👑',col:'#f97316',items:[
+{id:61,cd:'K1U9B',nm:'Prof(a). 61',img:'https://iili.io/CwOjhwg.jpg',c1:'#7a3a0a'},
+{id:62,cd:'L5V2C',nm:'Prof(a). 62',img:'https://iili.io/CwOjOMv.jpg',c1:'#8b4510'},
+{id:63,cd:'M8W7D',nm:'Prof(a). 63',img:'https://iili.io/CwOjePR.jpg',c1:'#73350e'},
+{id:64,cd:'N3X4F',nm:'Prof(a). 64',img:'https://iili.io/CwOjvFp.jpg',c1:'#662e0c'},
+{id:65,cd:'P6Y1G',nm:'Prof(a). 65',img:'https://iili.io/CwOjg9t.jpg',c1:'#5c290b'}
+]}
+];
+
+const revealed=new Set();
+const STORAGE_KEY='album_mtoledo_65_rnd';
+let TOTAL=0;
+GROUPS.forEach(g=>TOTAL+=g.items.length);
+document.getElementById('ot').textContent=TOTAL;
+document.getElementById('totalCount').textContent=TOTAL;
+
+function load(){try{const d=localStorage.getItem(STORAGE_KEY);if(d)JSON.parse(d).forEach(id=>revealed.add(id))}catch(e){}}
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify([...revealed]))}catch(e){}}
+
+function rNav(){
+  const nav=document.getElementById('pNav');
+  GROUPS.forEach(g=>{
+    const a=document.createElement('a');
+    a.href='#g-'+g.id;a.className='pl';
+    a.innerHTML=`<span>${g.ic} ${g.nm}</span><span class="c" id="nc-${g.id}">0/${g.items.length}</span>`;
+    a.addEventListener('click',e=>{e.preventDefault();document.getElementById('g-'+g.id).scrollIntoView({behavior:'smooth'})});
+    nav.appendChild(a);
+  });
+}
+
+function rGroups(){
+  const box=document.getElementById('gc');
+  GROUPS.forEach(g=>{
+    const s=document.createElement('section');
+    s.className='gs';s.id='g-'+g.id;
+    s.innerHTML=`<div class="gh" style="border-left:3px solid ${g.col}"><div class="gl2"><span class="gi">${g.ic}</span><div class="gt"><h2>${g.nm} — ${g.sub}</h2><span class="gs2">${g.items.length} professores</span></div></div><div class="gr"><span class="gp" id="gp-${g.id}">0/${g.items.length}</span><div class="gb"><div class="gf" id="gf-${g.id}" style="background:${g.col}"></div></div></div></div><div class="sg" id="sg-${g.id}"></div><div class="gdone" id="gd-${g.id}"><p>&#9733; ${g.nm} completo! &#9733;</p></div>`;
+    box.appendChild(s);
+    const grid=s.querySelector('.sg');
+    g.items.forEach((it,i)=>{
+      const pad=String(it.id).padStart(2,'0');
+      const sl=document.createElement('div');
+      sl.className='ss';sl.id='s-'+it.id;
+      sl.style.setProperty('--c1',it.c1);sl.style.setProperty('--c2',g.col);sl.style.setProperty('--sc',g.col);
+      sl.innerHTML=`<div class="rf"></div><div class="sp"><span class="sn">${pad}</span><div class="sq">?</div><span class="sh2">Cole o código</span></div><div class="sf"><div class="sfb"></div><div class="sphoto"><img src="${it.img}" alt="${it.nm}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'sphoto-ph\\'>👤</div>'"></div><div class="snum">#${pad}</div><div class="sinfo"><div class="sname">${it.nm}</div><span class="srole">${g.nm}</span></div><div class="sac"></div>`;
+      sl.style.opacity='0';sl.style.transform='translateY(12px)';sl.style.transition='opacity .4s ease, transform .4s ease, border-color .3s, box-shadow .3s';
+      grid.appendChild(sl);
+      setTimeout(()=>{sl.style.opacity='1';sl.style.transform='translateY(0)'},150+i*35);
+      sl.addEventListener('click',()=>{if(sl.classList.contains('r'))openModal(it,g);else document.getElementById('ci').focus()});
+    });
+  });
+}
+
+function updProg(){
+  const cnt=revealed.size,pct=Math.round((cnt/TOTAL)*100);
+  document.getElementById('oc').textContent=cnt;document.getElementById('of').style.width=pct+'%';document.getElementById('op').textContent=pct+'%';
+  const pills=document.querySelectorAll('.pl');
+  GROUPS.forEach((g,gi)=>{
+    const pc=g.items.filter(it=>revealed.has(it.id)).length;
+    const pp=Math.round((pc/g.items.length)*100);
+    document.getElementById('gp-'+g.id).textContent=pc+'/'+g.items.length;
+    document.getElementById('gf-'+g.id).style.width=pp+'%';
+    document.getElementById('nc-'+g.id).textContent=pc+'/'+g.items.length;
+    const d=document.getElementById('gd-'+g.id);
+    if(pc===g.items.length){d.classList.add('show');if(pills[gi])pills[gi].dataset.s='done'}else{d.classList.remove('show');if(pills[gi])delete pills[gi].dataset.s}
+  });
+  if(adminUnlocked)updateAdminStatuses();
+  if(cnt===TOTAL){document.getElementById('banner').classList.add('show');confetti(100)}
+}
+
+function restore(){revealed.forEach(id=>{const sl=document.getElementById('s-'+id);if(sl)sl.classList.add('r')})}
+
+function openModal(it,grp){
+  const pad=String(it.id).padStart(2,'0');
+  document.getElementById('modalInner').innerHTML=`<button class="mx" onclick="closeModal()">&#10005;</button><div class="mh"><div class="mphoto"><img src="${it.img}" alt="${it.nm}" onerror="this.parentElement.innerHTML='<div class=\\'mphoto-ph\\'>👤</div>'"></div><div class="mn">${it.nm}</div><div class="mr">${grp.nm} — ${grp.sub}</div><div class="mk">Código: ${it.cd}</div></div><div class="mb"></div><div class="mf2"><img src="${LOGO}" alt="Logo"><span>E.E. Mário Toledo de Moraes — Dr. &bull; 2026</span></div>`;
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal()});
+
+function redeem(){
+  const inp=document.getElementById('ci'),msg=document.getElementById('cm');
+  const raw=inp.value.trim().toUpperCase();
+  if(!raw){msg.textContent='';return}
+  let match=null,matchGroup=null;
+  for(const g of GROUPS){for(const it of g.items){if(raw===it.cd){match=it;matchGroup=g;break}}if(match)break}
+  if(!match){inp.classList.remove('gl');inp.classList.add('sh');msg.className='cm e';msg.textContent='Código inválido. Verifique e tente novamente.';setTimeout(()=>inp.classList.remove('sh'),500);return}
+  if(revealed.has(match.id)){msg.className='cm o';msg.textContent=`${match.nm} (${match.cd}) já foi revelado(a)!`;inp.value='';return}
+  revealed.add(match.id);save();
+  inp.classList.remove('sh');inp.classList.add('gl');
+  msg.className='cm o';msg.textContent=`${match.nm} — ${matchGroup.nm} — revelado(a)!`;
+  setTimeout(()=>inp.classList.remove('gl'),700);
+  const sl=document.getElementById('s-'+match.id);
+  sl.classList.add('r','pp2');setTimeout(()=>sl.classList.remove('pp2'),800);
+  inp.value='';updProg();
+  confetti(matchGroup.items.every(it=>revealed.has(it.id))?35:12);
+}
+
+function confetti(n){
+  const box=document.getElementById('cbox');
+  const cols=['#228be6','#38bdf8','#4ade80','#f59e0b','#ef4444','#8b5cf6','#ec4899','#fff'];
+  for(let i=0;i<n;i++){
+    const p=document.createElement('div');p.className='cp';
+    p.style.left=Math.random()*100+'%';p.style.background=cols[Math.floor(Math.random()*cols.length)];
+    p.style.animationDelay=Math.random()*.5+'s';p.style.animationDuration=(1.4+Math.random()*1.2)+'s';
+    p.style.width=(3+Math.random()*6)+'px';p.style.height=(7+Math.random()*9)+'px';
+    p.style.borderRadius=Math.random()>.5?'50%':'2px';
+    box.appendChild(p);setTimeout(()=>p.remove(),3000);
+  }
+}
+
+/* ADMIN */
+let adminUnlocked=false;
+document.getElementById('adminGate').addEventListener('click',function(e){
+  e.stopPropagation();
+  document.getElementById('adminPwBox').classList.add('open');
+  document.getElementById('adminPw').focus();
+});
+document.getElementById('adminPwBtn').addEventListener('click',tryAdmin);
+document.getElementById('adminPw').addEventListener('keydown',function(e){if(e.key==='Enter')tryAdmin()});
+function tryAdmin(){
+  if(document.getElementById('adminPw').value.trim()===_ADMIN_PW){
+    adminUnlocked=true;
+    document.getElementById('adminPwMsg').textContent='';
+    document.getElementById('adminGate').style.display='none';
+    document.getElementById('adminPwBox').style.display='none';
+    document.getElementById('codesArea').classList.add('open');
+    updateAdminStatuses();
+  }else{
+    document.getElementById('adminPwMsg').textContent='Senha incorreta.';
+    document.getElementById('adminPw').value='';
+    document.getElementById('adminPw').focus();
+  }
+}
+function updateAdminStatuses(){
+  if(!adminUnlocked)return;
+  revealed.forEach(id=>{const si=document.getElementById('si-'+id);if(si){si.className='si ul';si.innerHTML='&#10003;'}});
+}
+
+function rCodes(){
+  const box=document.getElementById('codesArea');
+  GROUPS.forEach(g=>{
+    const d=document.createElement('details');d.className='codes-sec';
+    let rows='';
+    g.items.forEach(it=>{
+      const pad=String(it.id).padStart(2,'0');
+      rows+=`<tr id="r-${it.id}"><td>${pad}</td><td>${it.nm}</td><td class="cv">${it.cd}</td><td style="text-align:center"><span class="si lk" id="si-${it.id}">&#10007;</span></td></tr>`;
+    });
+    d.innerHTML=`<summary>${g.ic} ${g.nm} — ${g.sub}</summary><table class="ct"><thead><tr><th>#</th><th>Nome</th><th>Código</th><th style="text-align:center">St</th></tr></thead><tbody>${rows}</tbody></table>`;
+    box.appendChild(d);
+  });
+}
+
+document.getElementById('btnReveal').addEventListener('click',redeem);
+document.getElementById('ci').addEventListener('keydown',e=>{if(e.key==='Enter')redeem()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+window.clearAlbum=function(){localStorage.removeItem(STORAGE_KEY);location.reload()};
+
+rNav();rGroups();rCodes();load();restore();updProg();
+</script>
+</body>
+</html>
